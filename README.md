@@ -7,7 +7,7 @@
 
 ### ScreenShot
 
-![screenshot](https://github.com/rrhythmsharma/Face-Recognition-Reactjs/tree/master/src/components/image/screenshot-image.jpg)
+![screenshot](https://github.com/rrhythmsharma/Face-Recognition-Reactjs/blob/master/src/components/image/screenshot-image.jpg)
 
 ## Powered by [clarifai.com](https://www.clarifai.com/)
 #### The project uses clarifai api for face detection
