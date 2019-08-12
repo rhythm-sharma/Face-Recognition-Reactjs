@@ -10,7 +10,7 @@ const FaceRecognition = ({imageUrl, box, showImage}) => {
                 )
                 }
                 { showImage === false && (
-                    <p>{"I'm waiting for Url please Insert it!"}</p>
+                    <p className="f3">{'Give it a try!'}</p>
                 )
                 }
                 { box.map((item, index) => (
