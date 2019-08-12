@@ -65,6 +65,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({
+      box: [],
       imageUrl: this.state.input,
       showImage: true
     });
