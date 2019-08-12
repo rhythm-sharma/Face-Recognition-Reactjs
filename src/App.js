@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Particles from 'react-particles-js';
 import Clarifai from 'clarifai';
 import Navigation from './components/Navigation/Navigation';
-import Logo from './components/Logo/Logo';
 import Rank from './components/Rank/Rank';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
@@ -19,10 +18,10 @@ const app = new Clarifai.App({
 const particleprams = {
   particles: {
     number: {
-      value: 80,
+      value: 90,
       density: {
         enable: true,
-        value_area: 800
+        value_area: 900
       }
     }
   }
@@ -90,7 +89,6 @@ class App extends Component {
         {
           this.state.route === "home"
            ? <div>
-                <Logo />
                 <Rank />
                 <ImageLinkForm 
                   onInputChange={this.onInputChange}
