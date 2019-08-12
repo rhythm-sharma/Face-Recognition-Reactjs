@@ -1,17 +1,22 @@
 import React from 'react';
+import './Navigation.css';
 
 const Navigation = ({onRouteChange, isSignedIn}) => {
             if(isSignedIn) {
                 return(
-                    <nav style = {{display: 'flex', justifyContent: 'flex-end'}}>
-                        <p onClick={ () => onRouteChange('signout')} className='f3 link dim black underline pa3 pointer'>Sign Out</p>
+                    <nav className="flex justify-between bb b--white-10 shadow-3 navbar-container"  style = {{display: 'flex', justifyContent: 'flex-end'}}>
+                        <div className="flex-grow flex items-center">
+                            <p onClick={ () => onRouteChange('signout')} className="f6 dib black bg-animate hover-bg-black hover-white mr3 mr4-ns pv2 ph2 pointer navbar-button">Sign out</p>
+                        </div>
                     </nav>
                 );
             }else {
                 return(
-                    <nav style = {{display: 'flex', justifyContent: 'flex-end'}}>
-                        <p onClick={ () => onRouteChange('SignIn')} className='f3 link dim black underline pa3 pointer'>Sign In</p>
-                        <p onClick={ () => onRouteChange('Register')} className='f3 link dim black underline pa3 pointer'>Register</p>
+                    <nav class="flex justify-between bb b--white-10 shadow-3 navbar-container"  style = {{display: 'flex', justifyContent: 'flex-end'}}>
+                        <div className="flex-grow flex items-center">
+                            <p onClick={ () => onRouteChange('SignIn')}  className="f6 dib black bg-animate hover-bg-black hover-white mr1 mr4-ns pv2 ph2 br-pill pointer navbar-button">Sign in</p>
+                            <p onClick={ () => onRouteChange('Register')} className="f6 dib black bg-animate hover-bg-black hover-white mr1 mr4-ns pv2 ph2 br-pill pointer navbar-button">Register</p>
+                        </div>
                     </nav>
                 );
             }

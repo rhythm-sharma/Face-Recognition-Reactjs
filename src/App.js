@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Particles from 'react-particles-js';
 import Clarifai from 'clarifai';
 import Navigation from './components/Navigation/Navigation';
-import Rank from './components/Rank/Rank';
+// import Rank from './components/Rank/Rank';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import SignIn from './components/SignIn/SignIn';
@@ -35,7 +35,8 @@ class App extends Component {
       imageUrl: '',
       box: {},
       route: 'SignIn',
-      isSignedIn: false
+      isSignedIn: false,
+      showImage: false
     }
   }
 
@@ -62,7 +63,10 @@ class App extends Component {
   }
 
   onButtonSubmit = () => {
-    this.setState({imageUrl: this.state.input});
+    this.setState({
+      imageUrl: this.state.input,
+      showImage: !this.state.showImage
+    });
     app.models.predict(
         Clarifai.FACE_DETECT_MODEL, 
         this.state.input)
@@ -95,7 +99,7 @@ class App extends Component {
                   onInputChange={this.onInputChange}
                   onButtonSubmit={this.onButtonSubmit}
                 />
-                <FaceRecognition box={this.state.box} imageUrl={this.state.imageUrl}/>
+                <FaceRecognition box={this.state.box} imageUrl={this.state.imageUrl} showImage={this.state.showImage}/>
               </div>
             : (
                 this.state.route === "SignIn"
