@@ -13,8 +13,9 @@ const FaceRecognition = ({imageUrl, box, showImage}) => {
                     <p>{"I'm waiting for Url please Insert it!"}</p>
                 )
                 }
-                <div className='bounding-box' style={{top: box.toprow, right: box.rightcol, bottom: box.bottomrow, left: box.leftcol}} >
-                </div>
+                { box.map((item, index) => (
+                    <div className='bounding-box' style={{top: item.toprow, right: item.rightcol, bottom: item.bottomrow, left: item.leftcol}} key={index}></div>
+                ))}
             </div>
         </div>
     );
